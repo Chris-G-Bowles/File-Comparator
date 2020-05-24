@@ -81,4 +81,9 @@ public class FileComparator {
 	private static String hexadecimal(int number) {
 		return Integer.toHexString(number).toUpperCase();
 	}
+	
+	private static void error(String message) {
+		System.out.println("Error: " + message);
+		System.exit(1);
+	}
 }

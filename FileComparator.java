@@ -13,23 +13,23 @@ public class FileComparator {
 					"java FileComparator <file 1 location> <file 2 location>");
 		}
 		Scanner input = new Scanner(System.in);
-		String file1location;
+		String file1Location;
 		if (args.length == 0) {
 			System.out.print("Enter file 1's location: ");
-			file1location = input.nextLine();
+			file1Location = input.nextLine();
 		} else {
-			file1location = args[0];
+			file1Location = args[0];
 		}
-		String file2location;
+		String file2Location;
 		if (args.length == 0) {
 			System.out.print("Enter file 2's location: ");
-			file2location = input.nextLine();
+			file2Location = input.nextLine();
 		} else {
-			file2location = args[1];
+			file2Location = args[1];
 		}
 		input.close();
 		try {
-			FileInputStream inputStream = new FileInputStream(file1location);
+			FileInputStream inputStream = new FileInputStream(file1Location);
 			int token;
 			ArrayList<Integer> file1 = new ArrayList<>();
 			do {
@@ -44,7 +44,7 @@ public class FileComparator {
 			} while (token >= 0 && token <= 255);
 			inputStream.close();
 			try {
-				inputStream = new FileInputStream(file2location);
+				inputStream = new FileInputStream(file2Location);
 				ArrayList<Integer> file2 = new ArrayList<>();
 				do {
 					try {
@@ -57,8 +57,8 @@ public class FileComparator {
 					}
 				} while (token >= 0 && token <= 255);
 				inputStream.close();
-				System.out.println("\n" + file1location + ": " + file1.size() + " bytes");
-				System.out.println(file2location + ": " + file2.size() + " bytes");
+				System.out.println("\n" + file1Location + ": " + file1.size() + " bytes");
+				System.out.println(file2Location + ": " + file2.size() + " bytes");
 				System.out.println("\nBinary differences:");
 				System.out.println("Address   File 1   File 2");
 				int i;
@@ -70,10 +70,10 @@ public class FileComparator {
 				}
 				System.out.println("\n" + i + " bytes checked.");
 			} catch (Exception e) {
-				System.out.println("Error: " + file2location + " not found.");
+				System.out.println("Error: " + file2Location + " not found.");
 			}
 		} catch (Exception e) {
-			System.out.println("Error: " + file1location + " not found.");
+			System.out.println("Error: " + file1Location + " not found.");
 		}
 	}
 	
